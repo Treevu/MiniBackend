@@ -8,8 +8,18 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // --- Middleware ---
-// Enable CORS for all routes to allow frontend requests
-app.use(cors());
+// Enable CORS for treevu.app domain
+app.use(cors({
+  origin: [
+    'https://treevu.app',
+    'https://www.treevu.app',
+    'http://localhost:3000',
+    'http://localhost:5173'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 // Increase payload limit to handle base64 images
 app.use(express.json({ limit: '10mb' }));
 
