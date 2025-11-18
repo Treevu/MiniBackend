@@ -62,6 +62,7 @@ const generateWithBackoff = async (request, retries = 3, delay = 1000) => {
 
 // --- Simulated RUC Database ---
 const RUC_DATABASE = {
+    '20424718361': 'Mangos Restaurante',
     '20548874679': 'La Lucha Sanguchería Criolla S.A.C.',
     '20332093952': 'Cencosud Retail Peru S.A. (Wong/Metro)',
     '20508565934': 'Hipermercados Tottus S.A.',
